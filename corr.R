@@ -2,7 +2,7 @@ corr <- function(directory, threshold = 0) {
     ## 'directory' is a character vector of length 1 indicating
     ## the location of the CSV files
     
-    wd <- '/Users/williammcdonald/datasciencecoursera/'
+    wd <- getwd()
     Data <- data.frame()
     correlation <- numeric()
     ## 'threshold' is a numeric vector of length 1 indicating the
@@ -11,7 +11,7 @@ corr <- function(directory, threshold = 0) {
     ## nitrate and sulfate; the default is 0
     
     for(file in 1:332){        
-        AllData <- na.omit(read.csv(paste(wd,directory,'/',sprintf("%03d", file),".csv",sep="")))
+        AllData <- na.omit(read.csv(paste(wd,'/',directory,'/',sprintf("%03d", file),".csv",sep="")))
         
         if(nrow(AllData) >= threshold){
             
