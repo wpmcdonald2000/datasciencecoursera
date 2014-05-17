@@ -7,7 +7,7 @@
 # define the function
 best <- function(state,outcome){
         # read data
-        data=read.csv("outcome-of-care-measures.csv")
+        data <- read.csv("outcome-of-care-measures.csv")
         df <- data[,c(2,7,11,17,23)]
         names(df) <- c('Hospital','State','heart attack','heart failure','pneumonia')
        
